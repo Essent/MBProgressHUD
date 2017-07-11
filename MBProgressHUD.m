@@ -1408,14 +1408,14 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 
 - (BOOL)dimBackground {
     MBBackgroundView *backgroundView = self.backgroundView;
-    UIColor *dimmedColor =  [UIColor colorWithWhite:0.f alpha:.2f];
+    UIColor *dimmedColor =  [[UIColor whiteColor] colorWithAlphaComponent:0.7f];
     return backgroundView.style == MBProgressHUDBackgroundStyleSolidColor && [backgroundView.color isEqual:dimmedColor];
 }
 
 - (void)setDimBackground:(BOOL)dimBackground {
     MBMainThreadAssert();
     self.backgroundView.style = MBProgressHUDBackgroundStyleSolidColor;
-    self.backgroundView.color = dimBackground ? [UIColor colorWithWhite:0.f alpha:.2f] : [UIColor clearColor];
+    self.backgroundView.color = dimBackground ? [[UIColor whiteColor] colorWithAlphaComponent:0.7f] : [UIColor clearColor];
 }
 
 - (CGSize)size {
